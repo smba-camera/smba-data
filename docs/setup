@@ -1,0 +1,22 @@
+# setup:
+# install python module for virtual python environments
+pip install virtualenv
+cd <projectFolder>
+
+# create a virtualEnvironment folder
+virtualenv venv -p <pathToPython2Exe>
+
+# activate virtual environment that wraps packages of this project
+venv/scripts/activate
+
+# install all required packages
+pip install -r requirements.txt
+
+# create a file named "DbServerParams.py" in ./smba_data/persistency/
+# write 3 python properties into it:
+# host=<mongoDbHost>
+# user=<dbUser>
+# passw=<dbUserPassword>
+
+# run tests
+nosetests

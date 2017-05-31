@@ -1,0 +1,4 @@
+venv
+smba_data/persistency/DbServerParams.py
+.idea
+*.pyc

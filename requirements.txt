@@ -1,0 +1,3 @@
+tornado # used by motor
+motor # mongodb client
+nose # testframework
