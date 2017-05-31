@@ -4,4 +4,4 @@ def TestDbConnection():
     client = Con.connect()
     db = client.get_default_database()
     print(db.name)
-    assert db.name == 'smba_data'
+    assert db.name != "" and db.name != None
