@@ -1,3 +1,2 @@
-tornado # used by motor
-motor # mongodb client
+pymongo # mongodb driver
 nose # testframework
