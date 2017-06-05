@@ -3,7 +3,7 @@ from pymongo import MongoClient
 def connect():
     uri=None
     try:
-        from . import DbServerParams
+        import smba_data.configuration as DbServerParams
         #uri = "mongodb://{}:{}@{}".format(DbServerParams.user, DbServerParams.passw, DbServerParams.host)
 
     except ImportError:
