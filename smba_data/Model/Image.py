@@ -22,9 +22,13 @@ class Image:
             "time": time.mktime(self.time.timetuple()),
             "location": self.location,
         }
-        if (self.id):
-            obj["_id"]=self.id
-        self.id = col.insert_one(obj).inserted_id
+        if not self.id:
+            self.id = col.insert_one(obj).inserted_id
+            return
+
+        # already
+        obj["_id"]=self.id
+        col.find_one_and_replace({'_id':self.id}, obj, upsert=True)
 
     def save_to_disk(self, path):
         name = self.time.strftime('%Y-%m-%d-%H%M%S') + "_" + str(self.location)+".jpg"
