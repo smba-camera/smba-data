@@ -2,3 +2,4 @@ venv
 smba_data/persistency/DbServerParams.py
 .idea
 *.pyc
+smba_data/configuration.py
