@@ -1,5 +1,5 @@
 import urllib.request
-from smba_data.Model import Image, WeatherData
+from smba_data.Model import Image, WeatherData, loadImages, load_weather_data
 from smba_data.configuration import open_weather_map_api_key
 
 # position of weather cam
@@ -26,3 +26,10 @@ def request_save_image_weather():
     data[0].save()
     data[1].save()
 
+def download_all_data(path):
+    imgs = loadImages({})
+    weatherdata = load_weather_data({})
+    for i in imgs:
+        i.save_to_disk(path)
+    for w in weatherdata:
+        w.save_to_disk(path)
