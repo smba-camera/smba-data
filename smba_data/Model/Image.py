@@ -7,10 +7,13 @@ import base64
 collection_name = "image"
 
 class Image:
-    def __init__(self, img, location, time=datetime.today(), id=""):
+    def __init__(self, img, location, time=None, id=""):
 
         self.img = img
-        self.time = time
+        if time:
+            self.time = time
+        else:
+            self.time = datetime.today()
         self.location = location
         self.id = id
 

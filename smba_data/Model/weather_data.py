@@ -7,9 +7,12 @@ from  smba_data.persistency.Connection import Db
 collection_name = "weather"
 
 class WeatherData:
-    def __init__(self, data, location, time=datetime.today(), id=""):
+    def __init__(self, data, location, time=None, id=""):
         self.location = location
-        self.time = time
+        if time:
+            self.time = time
+        else:
+            self.time = datetime.today()
         self.id = id
         self.data = data
 
