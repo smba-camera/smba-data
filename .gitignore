@@ -3,3 +3,4 @@ smba_data/persistency/DbServerParams.py
 .idea
 *.pyc
 smba_data/configuration.py
+/smba_data/configuration-reader.py
